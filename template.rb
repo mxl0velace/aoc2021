@@ -1,13 +1,10 @@
 require 'mechanize'
-def main
+def load(day)
     agent = Mechanize.new
     agent.cookie_jar.load("cookies.txt", :cookiestxt)
-    file = agent.get("https://adventofcode.com/2021/day/1/input").body
-    file_data = file.split("\n")
-
-    puts file_data
+    return agent.get("https://adventofcode.com/2021/day/#{day}/input").body
 end
 
-if __FILE__ == $0
-    main
+def loadlines(day)
+    return load(day).split("\n")
 end

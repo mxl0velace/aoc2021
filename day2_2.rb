@@ -1,9 +1,6 @@
-require 'mechanize'
+require './template.rb'
 def main
-    agent = Mechanize.new
-    agent.cookie_jar.load("cookies.txt", :cookiestxt)
-    file = agent.get("https://adventofcode.com/2021/day/2/input").body
-    file_data = file.split("\n")
+    file_data = loadlines(2)
     hor = 0
     ver = 0
     aim = 0
