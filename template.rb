@@ -8,3 +8,7 @@ end
 def loadlines(day)
     return load(day).split("\n")
 end
+
+def loadlines_offline(day)
+    return File.open("day#{day}.txt").readlines.map(&:chomp)
+end
